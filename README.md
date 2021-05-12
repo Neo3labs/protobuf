@@ -15,3 +15,33 @@ Public class Person { 			message Person {
     private int age;			   int32 = 2;
 }                            }        
 ```
+
+## Proto - Types
+
+| Java Type     | Proto Type    |
+| ------------- | ------------- |
+| int           | int32         |
+| long          | int64         |
+| float         | float         |
+| double        | double        |
+| boolean       | bool          |
+| String        | string        |
+| byte          | bytes         |
+
+## Proto - Collections & Map
+
+| Java Type          | Proto Type    |
+| ------------------ | ------------- |
+| Collection/List    | repeated      |
+| Map                | map           |
+
+## Proto - Default Values
+
+| Proto Type                      | Default Value        |
+| ------------------------------- | ---------------------|
+| int32/ any number type          | 0                    |
+| bool                            | false                |
+| string                          | empty string         |
+| enum                            | first value          |
+| repeated                        | empty list           |
+| map                             | wrapper / empty map  |
