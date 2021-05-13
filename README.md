@@ -56,7 +56,7 @@ Public class Person { 			message Person {
  * 1-15 for frequently used fields (uses 1 byte)
  * 16-1047 - uses 2 bytes
  * 1 is smallest.
- * 2power29-1
+ * 2<sup>29</sup>-1
  * 19000-19999 - reserved
  * Do not change the field number once it is in use.
 
