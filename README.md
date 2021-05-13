@@ -59,3 +59,31 @@ Public class Person { 			message Person {
  * 2power29-1
  * 19000-19999 - reserved
  * Do not change the field number once it is in use.
+
+## Proto - Guidelines
+
+ * 1-15 for frequently used fields.
+ * Do noot reorder the fields once it is in use.
+ * Adding New fields will not break old proto
+ * Removing fields will not break old proto.
+    * Use reserved.
+ * Changing Type
+    * int32 → int64 is OK.
+    * int64 → int32 might be a problem.
+ * Renaming is OK. But be cautious.
+ * Keep the proto as seperate maven-module and add them as dependency in other modules.
+
+## gRPC - Introduction
+
+ * High-performance, open-source RPC framework.
+ * Developed at Google.
+ * Client app directly invokes Server method on a different machine.
+ * Serivce is defined using proto.
+
+## gRPC - Synchronous vs Asynchronous
+
+ * Client's call to the server can be Sync/Async
+    *  Sync → blocking/waiting for the response.
+    *  Async → Register a listner for callback
+ * It is completely up to the RPC
+    * It also depends on the RPC
