@@ -1,5 +1,6 @@
 package com.sb.protobuf;
 
+import com.google.protobuf.Int32Value;
 import com.sb.model.Address;
 import com.sb.model.Car;
 import com.sb.model.Dealer;
@@ -27,7 +28,7 @@ public class CompositionDemo {
         // Returns if key exists else default value of enum
         System.out.println(dealer.getModelOrThrow(2020).getBodyStyle());
 
-        Employee employee = Employee.newBuilder().setName("Sam").setAge(25).addAllCar(cars).setAddress(address).build();
+        Employee employee = Employee.newBuilder().setName("Sam").setAge(Int32Value.newBuilder().setValue(25).build()).addAllCar(cars).setAddress(address).build();
 
         System.out.println(
                employee

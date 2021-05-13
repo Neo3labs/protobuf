@@ -1,5 +1,9 @@
 syntax = "proto3";
 
+import "common/car.proto";
+import "common/address.proto";
+import "google/protobuf/wrappers.proto";
+
 option java_multiple_files = true;
 option java_package = "com.sb.model";
 
@@ -7,33 +11,15 @@ option java_package = "com.sb.model";
  Proto Composition
  */
 
-  message Address {
-    int32 postbox = 1;
-    string street = 2;
-    string city =  3;
-  }
-
-  message Car {
-    string make = 1;
-    string model = 2;
-    int32 year =3;
-    BodyStyle body_style = 4;
-  }
-
   message Employee {
-    string name = 1;
-    int32 age = 2;
-    Address address = 3;
-    repeated Car car = 4;
+    // 1 - 15 -> 1 byte
+    // 16 -2047 -> 2 bytes
+
+    string name = 1; // 1 is tag
+    google.protobuf.Int32Value age = 2;
+    common.Address address = 3;
+    repeated common.Car car = 4;
   }
 
-  message Dealer {
-    map<int32, Car> model = 1;
-  }
 
-  enum BodyStyle {
-    SEDAN = 0;
-    COUPE =1;
-    SUV = 2;
-    HATCHBACK = 3;
-  }
+
